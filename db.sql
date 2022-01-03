@@ -36,7 +36,7 @@ CREATE TABLE reviews(
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-INSERT INTO users(first_name, last_name, email, password) values('dave', 'Inoc', 'tangina@gmail.com', 'rachelle');
+INSERT INTO users(first_name, last_name, email, password) values('dave', 'Inoc', 'daveinoc@gmail.com', 'passwordinoc');
 
 INSERT INTO products(user_id, product_name, product_description, product_image) values('166e0efb-ee3f-47ab-b8c9-5c9b74187ec4', 'Nescafe', '100% pure soluble instant coffee. With NESCAFE Classic, you prepare every cup with real coffee flavor. Made with only high quality beans, every cup is a guarantee that youll get great coffee taste and superb aroma no matter how you mix it.', '');
 

@@ -40,10 +40,9 @@ app.get("/api/v1/productly/users", async (req, res) => {
 // Get single user
 app.get("/api/v1/productly/user/:id", async (req, res) => {
   try {
-    const user = await db.query(
-      "SELECT user_id, first_name, last_name, email, cover_photo, display_picture, bio_description FROM users WHERE user_id = $1;",
-      [req.params.id]
-    );
+    const user = await db.query("SELECT * FROM users WHERE user_id = $1;", [
+      req.params.id,
+    ]);
 
     const userReviewsCount = await db.query(
       "select count(user_id) from reviews where user_id = $1 and review_message <> '';",

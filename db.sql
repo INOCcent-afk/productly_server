@@ -38,7 +38,7 @@ CREATE TABLE reviews(
 
 INSERT INTO users(first_name, last_name, email, password) values('dave', 'Inoc', 'daveinoc@gmail.com', 'passwordinoc');
 
-INSERT INTO products(user_id, product_name, product_description, product_image) values('166e0efb-ee3f-47ab-b8c9-5c9b74187ec4', 'Nescafe', '100% pure soluble instant coffee. With NESCAFE Classic, you prepare every cup with real coffee flavor. Made with only high quality beans, every cup is a guarantee that youll get great coffee taste and superb aroma no matter how you mix it.', '');
+INSERT INTO products(user_id, product_name, product_description, product_image) values('a28599e7-ff15-4c06-9e02-f26bb1a8eafb', 'Nescafe', '100% pure soluble instant coffee. With NESCAFE Classic, you prepare every cup with real coffee flavor. Made with only high quality beans, every cup is a guarantee that youll get great coffee taste and superb aroma no matter how you mix it.', '');
 
 INSERT INTO products(user_id, product_name, product_description, product_image) values('166e0efb-ee3f-47ab-b8c9-5c9b74187ec4', 'Zibra', 'Best Burger Refreshing!', 'https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 
@@ -144,3 +144,6 @@ UPDATE users SET
                     reviews 
                 on products.product_id = reviews.reviews_product_id
                 WHERE LOWER(product_name) ~* 'z';
+
+
+SELECT user_id, first_name, last_name, email, cover_photo, display_picture, bio_description FROM users WHERE user_id = 'ef087746-f7b8-48c1-9610-b136acfb6cb3';

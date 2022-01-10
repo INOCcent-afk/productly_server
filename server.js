@@ -323,7 +323,7 @@ app.get("/api/v1/productly/product/:id", async (req, res) => {
     );
 
     const productReviews = await db.query(
-      "SELECT * FROM reviews LEFT JOIN (SELECT first_name, display_picture from users) users on reviews.user_id = users.user_id WHERE reviews_product_id = $1",
+      "SELECT * FROM reviews LEFT JOIN (SELECT first_name, user_id, display_picture from users) users on reviews.user_id = users.user_id WHERE reviews_product_id = $1",
       [req.params.id]
     );
 
